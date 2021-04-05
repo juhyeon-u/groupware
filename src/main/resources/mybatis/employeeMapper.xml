@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.ksmartech.groupware.mapper.EmployeeMapper">
+
+    <!--   신규사원 입사 기능-->
+    <insert id="newEmp">
+        INSERT INTO employee(employee_id, position_id, duty_id, group_id, employee_name, employee_email, employee_pwd, employee_join_date, employee_leave_date, employee_phonenumber, employee_birth, employee_state)
+        VALUES (#{employeeId}, #{positionId}, #{dutyId}, #{groupId}, #{employeeName}, #{employeeEmail}, #{employeePwd}, #{employeeJoinDate}, #{employeeLeaveDate}, #{employeePhonenumber}, #{employeeBirth}, #{employeeState})
+    </insert>
+
+</mapper>
