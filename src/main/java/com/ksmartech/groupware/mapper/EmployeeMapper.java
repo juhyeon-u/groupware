@@ -1,0 +1,12 @@
+package com.ksmartech.groupware.mapper;
+
+import com.ksmartech.groupware.model.EmployeeDto;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface EmployeeMapper {
+
+    //신규사원 입사
+    int newEmp(EmployeeDto employeeDto);
+
+}
