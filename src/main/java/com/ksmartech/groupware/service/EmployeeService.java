@@ -17,10 +17,10 @@ public class EmployeeService {
     EmployeeMapper employeeMapper;
 
 
-    //신규 사원 입사
-    public ResponseModel newEmp(EmployeeDto employeeDto){
+    //사원 추가
+    public ResponseModel addEmployee(EmployeeDto employeeDto){
 
-        int result = employeeMapper.newEmp(employeeDto);
+        int result = employeeMapper.insertEmployee(employeeDto);
 
         ResponseModel responseModel = new ResponseModel();
 

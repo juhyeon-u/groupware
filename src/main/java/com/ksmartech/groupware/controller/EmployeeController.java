@@ -20,12 +20,12 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
-    //신규 사원 입사
+    //신규 사원 추가
     @PostMapping(value = "/employee-info")
     @ResponseBody
-    public ResponseModel NewEmp(@RequestBody EmployeeDto employeeDto){
+    public ResponseModel employeeAdd(@RequestBody EmployeeDto employeeDto){
 
-        ResponseModel result = employeeService.newEmp(employeeDto);
+        ResponseModel result = employeeService.addEmployee(employeeDto);
 
         return result;
 

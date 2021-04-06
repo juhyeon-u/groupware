@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface EmployeeMapper {
 
     //신규사원 입사
-    int newEmp(EmployeeDto employeeDto);
+    int insertEmployee(EmployeeDto employeeDto);
 
 }
