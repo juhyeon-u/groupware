@@ -24,4 +24,10 @@
         WHERE group_id = #{groupId}
     </select>
 
+    <!-- 전사원 인사 정보 조회 -->
+    <select id="selectAllEmployee" resultType="EmployeeDto">
+        SELECT *
+        FROM employee
+    </select>
+
 </mapper>

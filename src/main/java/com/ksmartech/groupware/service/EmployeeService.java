@@ -56,4 +56,12 @@ public class EmployeeService {
         return result;
     }
 
+    //전사원 인사정보 조회
+    public  List<EmployeeDto> findAllEmployee(){
+
+        List<EmployeeDto> result= employeeMapper.selectAllEmployee();
+
+        return result;
+    }
+
 }

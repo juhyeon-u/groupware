@@ -53,4 +53,15 @@ public class EmployeeController {
 
         return result;
     }
+
+    //전사원 정보 조회
+    @GetMapping(value = "/employee-info/all")
+    @ResponseBody
+    public List<EmployeeDto> allEmployeeList(){
+
+        List<EmployeeDto> result = employeeService.findAllEmployee();
+
+        return result;
+    }
+
 }

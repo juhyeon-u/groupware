@@ -17,4 +17,7 @@ public interface EmployeeMapper {
     //팀원들 인사 카드 조회
     List<EmployeeDto> selectGroupEmployee(String groupId);
 
+    //전사원 인사 정보 조회
+    List<EmployeeDto> selectAllEmployee();
+
 }
