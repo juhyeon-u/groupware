@@ -29,12 +29,22 @@ public class EmployeeService {
             responseModel.setMessage("Success");
         } else {
             responseModel.setCode("0001");
-            responseModel.setMessage("No emp");
+            responseModel.setMessage("Fail");
         }
 
         logger.debug(responseModel.toString());
 
         return responseModel;
     }
+
+
+    //개인 사원 정보 조회
+    public EmployeeDto findEmployee(String employeeId){
+
+        EmployeeDto result = employeeMapper.selectEmployee(employeeId);
+
+        return result;
+    }
+
 
 }

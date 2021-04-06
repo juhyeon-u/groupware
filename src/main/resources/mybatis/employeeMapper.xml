@@ -10,4 +10,11 @@
         VALUES (#{employeeId}, #{positionId}, #{dutyId}, #{groupId}, #{employeeName}, #{employeeEmail}, #{employeePwd}, #{employeeJoinDate}, #{employeeLeaveDate}, #{employeePhonenumber}, #{employeeBirth}, #{employeeState})
     </insert>
 
+    <!-- 사원 정보 조회-->
+    <select id="selectEmployee" resultType="EmployeeDto">
+        SELECT *
+        FROM employee
+        WHERE employee_id = #{employeeId}
+    </select>
+
 </mapper>

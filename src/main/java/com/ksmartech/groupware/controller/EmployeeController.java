@@ -7,15 +7,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class EmployeeController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-
 
     @Autowired
     EmployeeService employeeService;
@@ -30,4 +27,17 @@ public class EmployeeController {
         return result;
 
     }
+
+    //사원 정보 조회
+    @GetMapping(value = "/employee-info/{employeeId}")
+    @ResponseBody
+    public EmployeeDto employeeDetail(@PathVariable String employeeId){
+
+        logger.debug(employeeId);
+
+        EmployeeDto result = employeeService.findEmployee(employeeId);
+
+        return result;
+    }
+
 }

@@ -9,4 +9,7 @@ public interface EmployeeMapper {
     //신규사원 입사
     int insertEmployee(EmployeeDto employeeDto);
 
+    //사원 정보 조회
+    EmployeeDto selectEmployee(String employeeId);
+
 }
