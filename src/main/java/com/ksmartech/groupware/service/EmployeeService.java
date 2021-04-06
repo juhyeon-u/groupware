@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EmployeeService {
 
@@ -46,5 +48,12 @@ public class EmployeeService {
         return result;
     }
 
+    //팀원 인사카드 조회
+    public List<EmployeeDto> findGroupEmployee(String groupId){
+
+        List<EmployeeDto> result = employeeMapper.selectGroupEmployee(groupId);
+
+        return result;
+    }
 
 }

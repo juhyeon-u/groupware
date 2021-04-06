@@ -17,4 +17,11 @@
         WHERE employee_id = #{employeeId}
     </select>
 
+    <!-- 해당 그룹의 팀원 인사 정보 조회 -->
+    <select id="selectGroupEmployee" resultType="EmployeeDto">
+        SELECT *
+        FROM employee
+        WHERE group_id = #{groupId}
+    </select>
+
 </mapper>

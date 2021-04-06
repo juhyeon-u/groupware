@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class EmployeeController {
 
@@ -40,4 +42,15 @@ public class EmployeeController {
         return result;
     }
 
+    //팀원 정보 조회
+    @GetMapping(value = "/employee-info/group/{groupId}")
+    @ResponseBody
+    public List<EmployeeDto> employeeList(@PathVariable String groupId){
+
+        logger.debug(groupId);
+
+        List<EmployeeDto> result = employeeService.findGroupEmployee(groupId);
+
+        return result;
+    }
 }
