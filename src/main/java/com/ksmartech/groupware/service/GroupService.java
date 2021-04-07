@@ -45,4 +45,25 @@ public class GroupService {
 
         return responseModel;
     }
+
+    //조직 삭제
+    public ResponseModel removeGroup(String groupId){
+
+        int result = groupMapper.deleteGroup(groupId);
+
+        ResponseModel responseModel = new ResponseModel();
+
+        if(result == 1) {
+            responseModel.setCode("0000");
+            responseModel.setMessage("Success");
+        } else {
+            responseModel.setCode("0001");
+            responseModel.setMessage("Fail to delete group");
+        }
+
+        logger.debug(responseModel.toString());
+
+        return responseModel;
+    }
+
 }

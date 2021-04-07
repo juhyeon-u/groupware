@@ -14,4 +14,7 @@ public interface GroupMapper {
     //조직 추가
     int insertGroup(GroupDto groupDto);
 
+    //조직 삭제
+    int deleteGroup(String groupId);
+
 }
