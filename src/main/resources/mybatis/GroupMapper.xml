@@ -10,4 +10,10 @@
         FROM `group`
     </select>
 
+    <!--  조직 추가  -->
+    <insert id="insertGroup" parameterType="GroupDto">
+        INSERT INTO `group`(group_name, group_parent_id, group_description)
+        VALUES (#{groupName}, #{groupParentId}, #{groupDescription})
+    </insert>
+
 </mapper>

@@ -11,4 +11,7 @@ public interface GroupMapper {
     //조직 목록 조회
     List<GroupDto> selectGroup();
 
+    //조직 추가
+    int insertGroup(GroupDto groupDto);
+
 }

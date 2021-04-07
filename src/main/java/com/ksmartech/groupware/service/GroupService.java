@@ -2,6 +2,7 @@ package com.ksmartech.groupware.service;
 
 import com.ksmartech.groupware.mapper.GroupMapper;
 import com.ksmartech.groupware.model.GroupDto;
+import com.ksmartech.groupware.model.ResponseModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,4 +26,23 @@ public class GroupService {
         return result;
     }
 
+    //조직 추가
+    public ResponseModel addGroup(GroupDto groupDto){
+
+        int result = groupMapper.insertGroup(groupDto);
+
+        ResponseModel responseModel = new ResponseModel();
+
+        if(result == 1) {
+            responseModel.setCode("0000");
+            responseModel.setMessage("Success");
+        } else {
+            responseModel.setCode("0001");
+            responseModel.setMessage("Fail to add new group");
+        }
+
+        logger.debug(responseModel.toString());
+
+        return responseModel;
+    }
 }
