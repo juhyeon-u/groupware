@@ -39,9 +39,9 @@ public class GroupController {
     }
 
     //조직 삭제
-    @DeleteMapping(value = "/group")
+    @DeleteMapping(value = "/group/{groupId}")
     @ResponseBody
-    public ResponseModel groupRemove(@RequestBody String groupId){
+    public ResponseModel groupRemove(@PathVariable String groupId){
 
         ResponseModel result = groupService.removeGroup(groupId);
 
